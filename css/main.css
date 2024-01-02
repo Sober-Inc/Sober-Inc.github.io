@@ -2,7 +2,6 @@
  * Custom CSS
  */
 
- :root {
-    --bs-body-bg: var(--bs-gray-100);
-  }
-  
+:root {
+  --bs-body-bg: var(--bs-gray-100);
+}

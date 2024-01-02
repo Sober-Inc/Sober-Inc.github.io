@@ -30,6 +30,7 @@
   <!-- Styles -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/main.css" hreflang="en-us" />
 </head>
 
@@ -61,19 +62,39 @@
     <h1>Sober</h1>
     <div class="col-lg-8 px-0">
       <p class="fs-5">
-        You've successfully loaded up the Bootstrap starter example. It
-        includes <a href="https://getbootstrap.com/">Bootstrap 5</a> via the
-        <a href="https://www.jsdelivr.com/package/npm/bootstrap">jsDelivr CDN</a>
-        and includes an additional CSS and JS file for your own code.
+        Discover new possibilities with Sober — it's much more than just a sobriety counter!
       </p>
       <p>
-        Feel free to download or copy-and-paste any parts of this example.
+        Sober not only allows you to track alcohol-free days but also helps you recall your personal reasons for
+        choosing a sober lifestyle,
+        maintain a detailed record of alcohol consumption, calculate the economic benefits of quitting, and, of course,
+        celebrate your successes and achievements.
+      </p>
+
+      <p>
+        Sober will become your reliable assistant in reducing or completely abstaining from alcohol.
+      </p>
+
+      <p>Here's what you can do with our app:
+      <ul>
+        <li>Track the number of sober days.</li>
+        <li>Remind yourself of personal reasons to stay sober.</li>
+        <li>Keep a detailed account of alcohol consumption for dynamic analysis.</li>
+        <li>Receive rewards and achievements for sober days.</li>
+        <li>Find out how much you save by giving up alcohol.</li>
+        <li>Get tips for easing hangovers.</li>
+        <li>Learn about the body's recovery process after quitting alcohol.</li>
+      </ul>
+      </p>
+
+      <p>
+        We sincerely hope that Sober will become a reliable companion on your journey to a sober life and help you
+        overcome dependency.
       </p>
 
       <hr class="col-1 my-4" />
 
-      <a href="https://getbootstrap.com" class="btn btn-primary">Read the Bootstrap docs</a>
-      <a href="https://github.com/twbs/examples" class="btn btn-secondary">View on GitHub</a>
+      <a href="https://apps.apple.com/ru/app/sober-counter-of-dry-days/id1257556473?l=en-GB" class="btn btn-primary">Get on AppStore</a>
     </div>
   </div>
 
@@ -112,9 +133,21 @@
     $("#terms").hide();
 
     $('.menu a').on('click', function () {
-      var href = $(this).attr('href');
-      console.log(href);
-      switch ($(this).attr('href')) {
+      var tabId = $(this).attr('href');
+      // Change active flag
+      $('.menu a').removeClass('active');
+      $(this).addClass('active');
+      // console.log(tabId);
+      switchTap(tabId);
+    });
+
+    if(window.location.hash) {
+      switchTap(window.location.hash);
+    }
+
+    function switchTap(tabId) {
+      // Show/hide content
+      switch (tabId) {
         case "#":
           $("#home").show();
           $("#policy").hide();
@@ -131,7 +164,7 @@
           $("#terms").hide();
           break;
       }
-    });
+    }
   </script>
 
 </body>
